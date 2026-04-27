@@ -28,8 +28,8 @@ This multi-agent retrieval has three specialized agents and one orchestration Ag
 
 ### Dependencies
 
-- Python 3.8+
-- PyTorch 1.13+
+- Python 3.10+
+- PyTorch 2.41+
 - CUDA-capable GPU(s) (recommended)
 - Transformers library
 - Additional dependencies (see installation section)
@@ -51,14 +51,14 @@ cd /path/to/multi-agent-retrieval
 
 2. **Set up conda environment**:
 ```bash
-conda create --name multi_agent_retrieval python=3.8 -y
+conda create --name multi_agent_retrieval python=3.10 -y
 conda activate multi_agent_retrieval
 ```
 
 3. **Install dependencies**:
 ```bash
-pip install torch torchvision torchaudio
-pip install transformers
+pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu124
+pip install transformers==4.57.0
 pip install clip-by-openai
 pip install wandb
 pip install scikit-learn
@@ -66,6 +66,8 @@ pip install tqdm
 pip install numpy scipy
 pip install h5py
 pip install qwen-vl-utils  # Required for Qwen VL models
+pip install accelerate
+pip install av
 ```
 
 4. **Install ImageBind dependencies** (if using ImageBind):
